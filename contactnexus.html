@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Logonexus.png">
+    <link rel="stylesheet" href="CSS.css">
+    <title>Nexus</title>
+    
+</head>
+
+<body>
+
+<header>    
+    <nav class="navbar">
+        <h3 href="index.html" class="logo">Nexus</h3>
+        <h3>Ouverture des server dans :</h3>
+        <h3><span id="decompte"></span></h3>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="actusnexus.html">Actus</a></li>
+                <li class="active"><a href="contactnexus.html">Nous contacter</a></li>
+                <li><a href="telechargementnexus.html">Téléchargement</a></li>
+                <li><a href="supportnexus.html">Support</a></li>
+                <li><a href="àpropos.html">À Propos</a></li>
+            </ul>
+
+        </div>
+        <img src="menu-btn.png" alt="menu hamburger" class="menuhamburger">
+    </nav>
+</header>
+
+<div class="container">
+    <section class="style">
+        <h2>Nous contactez</h2>
+        <p>Vous pouvez nous contacter par le server Discord ou bien par la rubrique <a href="supportnexus.html">Support</a>.</p>
+    </section>
+</div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</body>
+
+<script>
+    const menuHamburger = document.querySelector(".menuhamburger")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+      })
+</script>
+
+<script>
+    var dateFin = new Date(2023, 9, 28, 5, 43, 0);
+
+    function mettreAJourDecompte() {
+        var maintenant = new Date();
+        var tempsRestant = dateFin - maintenant;
+
+        var jours = Math.floor(tempsRestant / (1000 * 60 * 60 * 24));
+        var heures = Math.floor((tempsRestant % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((tempsRestant % (1000 * 60 * 60)) / (1000 * 60));
+        var secondes = Math.floor((tempsRestant % (1000 * 60)) / 1000);
+
+
+        document.getElementById("decompte").innerHTML = jours + "j " + heures + "h " + minutes + "m " + secondes + "s";
+    }
+
+
+    var interval = setInterval(mettreAJourDecompte, 1000);
+</script>
+<footer>
+    <a href="https://discord.gg/3TQQK9XCBe"><img src="discord.ico" alt="Discord" height="48px" width="48px"></a>
+    <a href="https://www.tiktok.com/@nexus.projet"><img src="tiktok.ico" alt="TikTok" height="48px" width="48px"></a>
+    <a href="https://www.youtube.com/@Nexus.Projet/featured"><img src="youtube.ico" alt="YouTube" height="48px" width="48px"></a>
+    
+    <p>&copy; Tous droits est réservé</p>
+</footer>
+</html>
